@@ -3,7 +3,7 @@ PRACTICE Exam 1, problem 1.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Valerie Galluzzi, Mark Hays, Amanda Stouder, Aaron Wilkin,
-         their colleagues, and PUT_YOUR_NAME_HERE.
+         their colleagues, and Tanner Brammeier.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
@@ -38,7 +38,7 @@ def main():
 
 
 ###############################################################################
-# TODO: 2.  READ the green doc-string for the:
+# DONE: 2.  READ the green doc-string for the:
 #   - is_prime
 #   - sum_of_digits
 # functions defined below.  You do NOT need to understand their
@@ -151,7 +151,8 @@ def run_test_problem1a():
 
 
 def problem1a(m, n):
-    """
+
+"""
     What comes in:  Integers m and n with abs(m) <= abs(n).
     What goes out:
       -- Returns the sum of the sines of the integers
@@ -166,7 +167,7 @@ def problem1a(m, n):
             sine(1) + sine(2) + sine(3) + sine(4),
          which is about 1.135.
       -- If m is 30 and n is 100, the correct answer is about 1.278.
-    """
+"""
     # -------------------------------------------------------------------------
     # TODO: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
