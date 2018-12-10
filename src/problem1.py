@@ -4,7 +4,7 @@ PRACTICE Exam 1, problem 1.
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Valerie Galluzzi, Mark Hays, Amanda Stouder, Aaron Wilkin,
          their colleagues, and Tanner Brammeier.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 ###############################################################################
 # Students:
@@ -27,7 +27,7 @@ Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
 ###############################################################################
 
 import testing_helper
-import time
+import math
 
 
 def main():
@@ -106,7 +106,7 @@ def sum_of_digits(number):
 def run_test_problem1a():
     """ Tests the   problem1a   function. """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement this TEST function.
+    # DONE: 3. Implement this TEST function.
     #   It TESTS the  problem1a  function defined below.
     #   Include at least **   4   ** tests (we wrote two for you).
     # -------------------------------------------------------------------------
@@ -139,6 +139,20 @@ def run_test_problem1a():
 
     print_summary_of_test_results(test_results)
 
+    # Test 3:
+    expected = 1.135  # This is APPROXIMATELY the correct answer.
+    print_expected_result_of_test([1, -2], expected, test_results,
+                                  format_string)
+    actual = problem1a(1, -2)
+    print_actual_result_of_test(expected, actual, test_results, precision=3)
+
+    # Test 4:
+    expected = .105  # This is APPROXIMATELY the correct answer.
+    print_expected_result_of_test([3, 4], expected, test_results,
+                                  format_string)
+    actual = problem1a(3, 4)
+    print_actual_result_of_test(expected, actual, test_results, precision=3)
+
     # -------------------------------------------------------------------------
     # TO DO: 2 (continued).
     # Below this comment, add 2 more test cases of your own choosing.
@@ -151,6 +165,12 @@ def run_test_problem1a():
 
 
 def problem1a(m, n):
+    total = 0
+    for k in range(abs(n**2) + 1 - abs(m**2)):
+        # print((n**2) + 1 - (m**2))
+        total = total + math.sin(k + (m**2))
+        # print(total)
+    return total
 
 """
     What comes in:  Integers m and n with abs(m) <= abs(n).
@@ -169,7 +189,7 @@ def problem1a(m, n):
       -- If m is 30 and n is 100, the correct answer is about 1.278.
 """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -182,7 +202,7 @@ def problem1a(m, n):
 def run_test_problem1b():
     """ Tests the   problem1b   function. """
     # -------------------------------------------------------------------------
-    # TODO: 5. Implement this TEST function.
+    # DONE: 5. Implement this TEST function.
     #   It TESTS the  problem1b  function defined below.
     #   Include at least **   4   ** tests.  Use the usual form:
     #
@@ -200,9 +220,46 @@ def run_test_problem1b():
     print('Testing the   problem1b   function:')
     print('--------------------------------------------------')
 
+    format_string = '    problem1b( {}, {} )'
+    test_results = [0, 0]  # Number of tests passed, failed.
+
+    # Test 1:
+    expected = 5  # This is APPROXIMATELY the correct answer.
+    print_expected_result_of_test([3, 5], expected, test_results,
+                                  format_string)
+    actual = problem1b(3, 5)
+    print_actual_result_of_test(expected, actual, test_results, precision=3)
+
+    # Test 2:
+    expected = 1  # This is APPROXIMATELY the correct answer.
+    print_expected_result_of_test([2, 1], expected, test_results,
+                                  format_string)
+    actual = problem1b(2, 1)
+    print_actual_result_of_test(expected, actual, test_results, precision=3)
+
+    # Test 3:
+    expected = 44  # This is APPROXIMATELY the correct answer.
+    print_expected_result_of_test([5, 40], expected, test_results,
+                                  format_string)
+    actual = problem1b(5, 40)
+    print_actual_result_of_test(expected, actual, test_results, precision=3)
+
+    # Test 4:
+    expected = 4  # This is APPROXIMATELY the correct answer.
+    print_expected_result_of_test([2, 4], expected, test_results,
+                                  format_string)
+    actual = problem1b(2, 4)
+    print_actual_result_of_test(expected, actual, test_results, precision=3)
 
 def problem1b(m, f):
-    """
+    count = 0
+    for k in range((f*m)+1 - m):
+        # print((f * m) + 1 - m)
+        if is_prime(k+m) is True:
+            count = count + 1
+    return count
+
+"""
     What comes in:  Positive integers m and f such that m >= 2.
     What goes out:
       -- Returns the number of integers from m to (f * m),
@@ -216,9 +273,9 @@ def problem1b(m, f):
            since there is one prime (namely, 2) between 2 and 2.
       -- If m is 5 and f is 40, the correct answer is 44,
            since there are 44 primes between 5 and 200.
-     """
+"""
     # -------------------------------------------------------------------------
-    # TODO: 6. Implement and test this function.
+    # DONE: 6. Implement and test this function.
     #   Note that you should write its TEST function first (above).
     #
     ###########################################################################
@@ -291,7 +348,12 @@ def run_test_problem1c():
 
 
 def problem1c(n):
-    """
+    total = 0
+    for k in range((n+1)-2):
+        print(is_prime(k+2))
+        is_prime(k+2)
+    return is_prime(k+2)
+"""
     What comes in:  An integer n >= 2.
     What goes out:
       -- Returns the sum of the digits in the product
@@ -313,7 +375,7 @@ def problem1c(n):
            are 2, 3, 5, 7, 11, 13, 17, 19, and 23,
            and the product of those numbers is 223092870,
            and the sum of the digits in 223092870 is 33.
-    """
+"""
     # -------------------------------------------------------------------------
     # TODO: 7. Implement and test this function.
     #          Tests have been written for you (above).
