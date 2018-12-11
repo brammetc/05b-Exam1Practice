@@ -180,14 +180,14 @@ def run_test_problem3b():
     """ Tests the   problem3b   function. """
     # Test 1 is ALREADY DONE (here).
     expected = 158
-    answer = problem3b(4, rg.Point(100, 50))
+    answer = problem3b(4, rg.Point(100, 0))
     print()
     print('Test 1 expected:', expected)
     print('       actual:  ', answer)
 
     # Test 2 is ALREADY DONE (here).
     expected = 539
-    answer = problem3b(7, rg.Point(30, 30))
+    answer = problem3b(7, rg.Point(30, -30))
     print()
     print('Test 2 expected:', expected)
     print('       actual:  ', answer)
@@ -195,8 +195,11 @@ def run_test_problem3b():
 
 def problem3b(m, point1):
     window = rg.RoseWindow(400, 600)
+    # for k in range
     for k in range(m):
-        problem3a(window, point1, k)
+        print(point1.y + 60)
+        point1 = rg.Point(point1.x, point1.y + 60)
+        problem3a(window, point1, (k * 2 + 3))
     window.close_on_mouse_click()
 
     """
@@ -235,7 +238,7 @@ def problem3b(m, point1):
         :type point1: rg.Point
     """
     # -------------------------------------------------------------------------
-    # TODO: 4. Implement and test this function.
+    # DONE: 4. Implement and test this function.
     #          Tests have been written for you (above).
     #
     ###########################################################################
