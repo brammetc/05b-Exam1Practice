@@ -61,6 +61,7 @@ def run_test_problem2a():
     problem2a(circle, rectangle, window)
     window.close_on_mouse_click()
 
+
     # A third test on ANOTHER window.
     title = 'Test 3 of problem2a: yellow to black'
     window = rg.RoseWindow(400, 300, title)
@@ -82,10 +83,13 @@ def problem2a(circle, rectangle, window):
     line = rg.Line(rectangle.get_upper_right_corner(), rectangle.get_lower_left_corner())
     line.attach_to(window)
     window.render()
-    window.continue_on_mouse_click()
     circle.fill_color = 'blue'
     window.render()
     window.continue_on_mouse_click()
+    circle.fill_color = 'green'
+    window.render()
+
+    # window.continue_on_mouse_click()
     """
     See   problem2a_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
@@ -115,7 +119,7 @@ def problem2a(circle, rectangle, window):
       :type window:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 2. Implement and test this function.
+    # DONE: 2. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
@@ -157,6 +161,13 @@ def run_test_problem2b():
 
 
 def problem2b(rect, n, delta, win):
+    rect.attach_to(win)
+    for k in range(n):
+        p1 = rg.Point(rect.corner_1.x - delta*k, rect.corner_1.y - delta*k)
+        p2 = rg.Point(rect.corner_2.x + delta*k, rect.corner_2.y + delta*k)
+        rec = rg.Rectangle(p1, p2)
+        rec.attach_to(win)
+        win.render()
     """
     See   problem2b_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
@@ -186,7 +197,7 @@ def problem2b(rect, n, delta, win):
       :type win:    rg.RoseWindow
     """
     # -------------------------------------------------------------------------
-    # TODO: 3. Implement and test this function.
+    # DONE: 3. Implement and test this function.
     #          Tests have been written for you (above).
     # -------------------------------------------------------------------------
     # -------------------------------------------------------------------------
