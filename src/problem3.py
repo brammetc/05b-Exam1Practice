@@ -3,8 +3,8 @@ PRACTICE Exam 1, problem 3.
 
 Authors: David Mutchler, Vibha Alangar, Matt Boutell, Dave Fisher,
          Valerie Galluzzi, Mark Hays, Amanda Stouder, Aaron Wilkin,
-         their colleagues, and PUT_YOUR_NAME_HERE.
-"""  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
+         their colleagues, and Tanner Brammeier.
+"""  # DONE: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import rosegraphics as rg
 
@@ -106,6 +106,12 @@ def run_test_problem3a():
 
 
 def problem3a(window, point, n):
+
+    for k in range(n):
+        point2 = rg.Point(point.x, point.y + 50*k)
+        line = rg.Line(point, point2)
+        line.attach_to(window)
+        window.render()
     """
     See   problem3a_picture.pdf   in this project for pictures
     that may help you better understand the following specification:
